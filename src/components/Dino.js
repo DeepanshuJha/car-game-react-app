@@ -23,7 +23,6 @@ const Dino = ({ startGame, setStartGame }) => {
         var element1 = document.querySelector('span');
         var blockLeft = parseInt(getComputedStyle(element1).right);
         
-        console.log(carTop, blockLeft)
 
         if(blockLeft >= 530 && blockLeft <= 590 && carTop >= 360){
             alert('Game Over');
