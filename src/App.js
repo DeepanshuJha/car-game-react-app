@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
+import './App.css'
+import Dino from './components/Dino';
+import Road from './components/Road'
+import Surround from './components/Surround';
+
+const App = () => {
+  const [startGame, setStartGame] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="game-container">
+        { startGame ? <Surround /> : null}
+        <Dino startGame={startGame} setStartGame={setStartGame}/>
+        <Road />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
